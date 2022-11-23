@@ -39,6 +39,17 @@
                             <td><input type="text" name="age" size="10">歳</td>
                         </tr>
                         <tr>
+                            <th>郵便番号</th>
+                            <td><input type="text" name="postnum" size="20" maxlength="10" placeholder="〒" required></td>
+                        </tr>
+                        <tr>
+                            <th>住所</th>
+                            <td><input type="text" name="todoufuken" size="20" maxlength="10" placeholder="都道府県" required>
+                            <input type="text" name="sityouson" size="20" maxlength="10" placeholder="市町村" required>
+                            <input type="text" name="banti" size="20" maxlength="10" placeholder="番地" required>
+                            <input type="text" name="tatemonomei" size="20" maxlength="10" placeholder="建物名"></td>  
+                        </tr>
+                        <tr>
                             <th>最寄り駅</th>
                             <td>
                                 <input type="text" name="eki" size="20" maxlength="10" placeholder="天王洲アイル駅" required>

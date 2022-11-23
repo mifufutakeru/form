@@ -8,6 +8,11 @@ $kana1 = htmlspecialchars($_POST['kana1'], ENT_QUOTES, 'UTF-8');
 $kana2 = htmlspecialchars($_POST['kana2'], ENT_QUOTES, 'UTF-8');
 $gender = $_POST['gender'];
 $age = htmlspecialchars($_POST['age'], ENT_QUOTES, 'UTF-8');
+$postnum = htmlspecialchars($_POST['postnum'], ENT_QUOTES, 'UTF-8');
+$todoufuken = htmlspecialchars($_POST['todoufuken'], ENT_QUOTES, 'UTF-8');
+$sityouson = htmlspecialchars($_POST['sityouson'], ENT_QUOTES, 'UTF-8');
+$banti = htmlspecialchars($_POST['banti'], ENT_QUOTES, 'UTF-8');
+$tatemonomei = htmlspecialchars($_POST['tatemonomei'], ENT_QUOTES, 'UTF-8');
 $eki = htmlspecialchars($_POST['eki'], ENT_QUOTES, 'UTF-8');
 $picture = $_FILES['image'];
 $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
@@ -20,6 +25,11 @@ $_SESSION['kana1'] = $kana1;
 $_SESSION['kana2'] = $kana2;
 $_SESSION['gender'] = $gender;
 $_SESSION['age'] = $age;
+$_SESSION['postnum'] = $postnum;
+$_SESSION['todoufuken'] = $todoufuken;
+$_SESSION['sityouson'] = $sityouson;
+$_SESSION['banti'] = $banti;
+$_SESSION['tatemonomei'] = $tatemonomei;
 $_SESSION['eki'] = $eki;
 $_SESSION['message'] = $message;
 $_SESSION['image']['data'] = file_get_contents($_FILES['image']['tmp_name']);
@@ -52,8 +62,20 @@ $_SESSION['img_name'] = $img_name;
                 <td><?php echo $kana1; ?><?php echo $kana2; ?></td>
             </tr>
             <tr>
+                <th>性別：</th>
+                <td><?php echo $gender; ?></td>
+            </tr>
+            <tr>
                 <th>年齢：</th>
                 <td><?php echo $age; ?></td>
+            </tr>
+            <tr>
+                <th>郵便番号：</th>
+                <td><?php echo $postnum; ?></td>
+            </tr>
+            <tr>
+                <th>住所：</th>
+                <td><?php echo $todoufuken , $sityouson , $banti , $tatemonomei; ?></td>
             </tr>
             <tr>
                 <th>最寄り駅：</th>

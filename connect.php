@@ -14,9 +14,9 @@
     <?php
     try {
         $pdo = new PDO(
-            'mysql:host=o5044-777.kagoya.net;dbname=goemon_urawa;charset=utf8',
-            'kir012728',
-            'cTjAA8g2'
+            'mysql:host=localhost;dbname=form;charset=utf8',
+            'root',
+            'root'
         );
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -24,7 +24,7 @@
         die('接続エラー：' . $Exception->getMessage());
     }
     try {
-        $sql = "SELECT * FROM goemon_urawa.form";
+        $sql = "SELECT * FROM form";
         $stmh = $pdo->prepare($sql);
         $stmh->execute();
     } catch (PDOException $Exception) {
@@ -41,6 +41,8 @@
                     <th>名前カナ</th>
                     <th>性別</th>
                     <th>年齢</th>
+                    <th>郵便番号</th>
+                    <th>住所</th>
                     <th>最寄り駅</th>
                     <th>写真</th>
                     <th>備考</th>
@@ -57,6 +59,8 @@
                         <td><?= htmlspecialchars($row['kana2']) ?></td>
                         <td><?= htmlspecialchars($row['gender']) ?></td>
                         <td><?= htmlspecialchars($row['age']) ?></td>
+                        <td><?= htmlspecialchars($row['postnum']) ?></td>
+                        <td><?= htmlspecialchars($row['todoufuken']['sityouson']['banti']['tatemonomei']) ?></td>
                         <td><?= htmlspecialchars($row['eki']) ?></td>
                         <td><a href="<?php echo ('https://goemon-urawa.jp/image/' . $row['picture']); ?> " target="_blank"><img src=" <?php echo ('https://goemon-urawa.jp/image/' . $row['picture']); ?> " class="conimg"></a></th>
                         <td><?= htmlspecialchars($row['note']) ?></th>
